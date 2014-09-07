@@ -58,5 +58,5 @@
 \.sublime-project$
 \.sublime-workspace$
 
-
-
+Avoid build distros
+Mojolicious-Plugin-SemanticUI-\d+\.\d+\.tar\.gz
