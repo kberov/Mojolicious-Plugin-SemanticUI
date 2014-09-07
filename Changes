@@ -1,0 +1,10 @@
+Revision history for Mojolicious::Plugin::SemanticUI
+
+0.03 2014-09-07
+  - More cleanups.
+
+0.02 2014-09-07
+  - Cleanups and work on CPAN related stuff.
+
+0.01 2014-09-06
+  - Initial release.

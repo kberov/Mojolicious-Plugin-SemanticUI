@@ -1,9 +1,9 @@
 package Mojolicious::Plugin::SemanticUI;
 use Mojo::Base 'Mojolicious::Plugin';
-use Mojo::Util qw(decamelize class_to_path);
-File::Spec::Functions->import(qw(catfile catdir));
+use Mojo::Util qw(class_to_path);
+File::Spec::Functions->import(qw(catdir));
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub register {
   my ($self, $app) = @_;
@@ -29,14 +29,12 @@ sub _add_paths {
     && (-d $plugin_static))
   {
     push @{$app->static->paths}, $plugin_static;
-    $app->log->debug($app->dumper($app->static->paths));
   }
 
   if (!(List::Util::first { $plugin_templates eq $_ // '' } @{$app->renderer->paths})
     && (-d $plugin_templates))
   {
     push @{$app->renderer->paths}, $plugin_templates;
-    $app->log->debug($app->dumper($app->renderer->paths));
   }
 
   return;
@@ -50,7 +48,7 @@ __END__
 
 =head1 NAME
 
-Mojolicious::Plugin::SemanticUI - Mojolicious Plugin
+Mojolicious::Plugin::SemanticUI - Semantic UI for your application
 
 =head1 SYNOPSIS
 

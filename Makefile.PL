@@ -11,13 +11,12 @@ WriteMakefile(
   META_MERGE   => {
     requires  => {perl => '5.014001'},
     resources => {
-      homepage   => 'http://mojolicio.us',
       license    => 'http://opensource.org/licenses/LGPL-3.0',
       repository => 'https://github.com/kberov/Mojolicious-Plugin-SemanticUI',
       bugtracker => 'https://github.com/kberov/Mojolicious-Plugin-SemanticUI/issues'
     },
     no_index => {directory => ['t']}
   },
-  PREREQ_PM => {'Mojolicious' => '5.37'},
+  PREREQ_PM => {'Mojolicious' => '5.39'},
   test      => {TESTS         => 't/*.t'}
 );
