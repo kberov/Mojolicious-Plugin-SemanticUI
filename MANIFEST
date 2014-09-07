@@ -1,3 +1,4 @@
+Changes
 lib/Mojolicious/Plugin/SemanticUI.pm
 lib/Mojolicious/public/vendor/SemanticUI/minified/definitions/behaviors/api.min.js
 lib/Mojolicious/public/vendor/SemanticUI/minified/definitions/behaviors/colorize.min.js
@@ -109,3 +110,7 @@ Makefile.PL
 MANIFEST
 MANIFEST.SKIP
 t/basic.t
+t/manifest.t
+t/perl-critic.t
+t/pod-coverage.t
+t/pod.t
