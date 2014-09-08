@@ -1,7 +1,0 @@
-<!-- button -->
-% my $args = {@_};
-% my $content = delete $args->{content};
-<button class="ui <%= delete $args->{class} %> button" <%= 
-  map $_.'="'.$args->{$_}.'" ' keys %$args %>>
-  %= $content
-</button>
