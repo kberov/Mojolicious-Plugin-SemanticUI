@@ -3,14 +3,11 @@ use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::Util qw(class_to_path);
 File::Spec::Functions->import(qw(catdir));
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub register {
   my ($self, $app) = @_;
 
-  # Prepend the plugin directory where static files reside
-  # to $app->static->paths if needed
-  #unshift @{$app->static->paths},   app->home->rel_dir('path/to/other/public/files');
   $self->_add_paths($app);
   return;
 }
@@ -62,10 +59,10 @@ Mojolicious::Plugin::SemanticUI - Semantic UI for your application
   <head>
   <!-- ... -->
   %= stylesheet begin
-    @import url('/vendor/SemanticUI/minified/definitions/elements/button.min.css');
-    @import url('/vendor/SemanticUI/minified/definitions/elements/divider.min.css');
+    @import url('/vendor/SemanticUI/definitions/elements/button.min.css');
+    @import url('/vendor/SemanticUI/definitions/elements/divider.min.css');
   %=end
-  %= javascript '/vendor/SemanticUI/packaged/definitions/javascript/semantic.min.js'
+  %= javascript '/vendor/SemanticUI/definitions/javascript/semantic.min.js'
   <!-- ... -->
   </head>
 
@@ -74,8 +71,8 @@ Mojolicious::Plugin::SemanticUI - Semantic UI for your application
 L<Mojolicious::Plugin::SemanticUI> 
 includes the minifed build of the Semantic UI CSS and Javascript library.
 Note that the beta 1.0 version is included - L<http://beta.semantic-ui.com/>.
-It also provides helpers for using Semantic UI modules in your temmplates (views). 
-This way you do not need to download Semantic UI it separately.
+It also provides helpers for using Semantic UI modules in your temmplates. 
+This way you do not need to download Semantic UI separately.
 This is ALPHA release - B<not ready for production>.
 
 =head1 METHODS
@@ -91,7 +88,7 @@ Register plugin in L<Mojolicious> application.
 
 =head1 HELPERS
 
-L<Mojolicious::Plugin::SemanticUI> B<will> exports the following
+L<Mojolicious::Plugin::SemanticUI> exports the following
 helpers for use in controllers and templates.
 The helpers are provided in the C<SemanticUI> namespace.
 

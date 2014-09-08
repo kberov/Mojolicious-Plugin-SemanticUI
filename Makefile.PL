@@ -9,7 +9,7 @@ WriteMakefile(
   AUTHOR       => q{Красимир Беров <berov@cpan.org>},
   LICENSE      => 'lgpl_3_0',
   META_MERGE   => {
-    requires  => {perl => '5.014001'},
+    requires  => {perl => '5.010001'},
     resources => {
       license    => 'http://opensource.org/licenses/LGPL-3.0',
       repository => 'https://github.com/kberov/Mojolicious-Plugin-SemanticUI',

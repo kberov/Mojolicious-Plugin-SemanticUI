@@ -1,5 +1,11 @@
 Revision history for Mojolicious::Plugin::SemanticUI
 
+0.04 2014-09-08
+  - Reduced package size by removing duplicate themes folder.
+  - Moved all the tree one level up.
+  - Static files now seem usable - no more changes here expected.
+  - Cleanups again, let's do some programming next time...
+
 0.03 2014-09-07
   - More cleanups.
 
