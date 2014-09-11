@@ -82,8 +82,7 @@ subtest themes => sub {
   my $path = $base . 'basic/assets/fonts/';
   for my $ext (qw(eot svg ttf woff)) {
     $t->get_ok($path . 'icons.' . $ext)->status_is(200);
-    # Let default/assets/fonts/ have the keys.
-    #$served_files->{'icons.' . $ext} = 1;
+    $served_files->{'icons.' . $ext} = 1;
   }
 
   $path = $base . 'default/assets/fonts/';
@@ -116,18 +115,16 @@ subtest packaged => sub {
 
 # To not miss newly added files with next upgrade.
 require File::Find;
-my $found_files = 0;
+my $found_files =0;
 subtest 'all served files exist' => sub {
   File::Find::find(
     sub {
       return unless -f;
       ok($served_files->{$_}, $_ . ' is served.') if -f;
-      #do not count basic theme fonts
-      return if $File::Find::dir=~ m|basic/assets/fonts|;
       $found_files++;
     },
     $INC[0] . '/Mojolicious/public/vendor/SemanticUI'
   );
 };
-is($found_files, keys %$served_files, 'all found files are served');
+is($found_files, keys @$served_files,'all found files are served');
 done_testing();

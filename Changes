@@ -1,4 +1,8 @@
 Revision history for Mojolicious::Plugin::SemanticUI
+0.05 2014-09-11
+  - Updated static files:
+    https://github.com/Semantic-Org/Semantic-UI/issues/691#issuecomment-54922686
+  - Improved tests.
 
 0.04 2014-09-08
   - Reduced package size by removing duplicate themes folder.

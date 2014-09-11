@@ -3,7 +3,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::Util qw(class_to_path);
 File::Spec::Functions->import(qw(catdir));
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 sub register {
   my ($self, $app) = @_;
