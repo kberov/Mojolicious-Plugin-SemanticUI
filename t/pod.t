@@ -1,5 +1,6 @@
 #!perl -T
-use 5.014000;
+#pod.t
+use 5.010001;
 use strict;
 use warnings FATAL => 'all';
 use Test::More;
