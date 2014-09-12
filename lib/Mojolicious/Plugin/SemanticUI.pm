@@ -3,11 +3,10 @@ use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::Util qw(class_to_path);
 File::Spec::Functions->import(qw(catdir));
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 sub register {
   my ($self, $app) = @_;
-
   $self->_add_paths($app);
   return;
 }
@@ -17,21 +16,21 @@ sub _add_paths {
   my ($self, $app) = @_;
   my $class_path = $INC{class_to_path(__PACKAGE__)};
   $class_path =~ s|Mojolicious[\\/].*$||x;
-  my ($plugin_static, $plugin_templates) = (
+  my ($static, $templates) = (
     catdir($class_path, 'Mojolicious', 'public'),
     catdir($class_path, 'Mojolicious', 'templates')
   );
 
-  if (!(List::Util::first { $plugin_static eq $_ // '' } @{$app->static->paths})
-    && (-d $plugin_static))
+  if (!(List::Util::first { $static eq $_ // '' } @{$app->static->paths})
+    && (-d $static))
   {
-    push @{$app->static->paths}, $plugin_static;
+    push @{$app->static->paths}, $static;
   }
 
-  if (!(List::Util::first { $plugin_templates eq $_ // '' } @{$app->renderer->paths})
-    && (-d $plugin_templates))
+  if (!(List::Util::first { $templates eq $_ // '' } @{$app->renderer->paths})
+    && (-d $templates))
   {
-    push @{$app->renderer->paths}, $plugin_templates;
+    push @{$app->renderer->paths}, $templates;
   }
 
   return;
@@ -71,7 +70,8 @@ Mojolicious::Plugin::SemanticUI - Semantic UI for your application
 L<Mojolicious::Plugin::SemanticUI> 
 includes the minifed build of the Semantic UI CSS and Javascript library.
 Note that the beta 1.0 version is included - L<http://beta.semantic-ui.com/>.
-It also provides helpers for using Semantic UI modules in your temmplates. 
+It also provides helpers (TODO) for using Semantic UI modules
+in your templates.
 This way you do not need to download Semantic UI separately.
 This is ALPHA release - B<not ready for production>.
 
@@ -104,11 +104,10 @@ The helpers are provided in the C<SemanticUI> namespace.
 TODO
 ...
 
-
 =head1 SEE ALSO
 
-L<http://beta.semantic-ui.com/>,
-L<Mojolicious>, L<Mojolicious::Guides>, L<http://mojolicio.us>.
+L<Mojolicious>, L<Mojolicious::Guides>, L<Ado>,
+L<http://beta.semantic-ui.com/>, L<http://mojolicio.us>.
 
 =head1 AUTHOR
 
@@ -128,4 +127,3 @@ the license may release under a different license.
 See http://opensource.org/licenses/lgpl-3.0.html for more information.
 
 =cut
-
