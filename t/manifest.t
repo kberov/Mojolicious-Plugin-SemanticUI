@@ -1,5 +1,5 @@
 #manifest.t
-use 5.014000;
+use 5.010001;
 use strict;
 use warnings FATAL => 'all';
 use Test::More;
