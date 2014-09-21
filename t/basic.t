@@ -31,11 +31,12 @@ subtest collections => sub {
     $served_files->{$file . '.min.css'} = 1;
   }
 };
+
 subtest elements => sub {
   my $path = $base . 'elements/';
   for my $file (
     qw(button divider flag header icon image input label list
-    loader progress reveal segment step)
+    loader progress reveal segment step rail)
     )
   {
     $t->get_ok($path . $file . '.min.css')->status_is(200)

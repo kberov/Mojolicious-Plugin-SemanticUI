@@ -1,7 +1,8 @@
 package Mojolicious::Plugin::SemanticUI;
 use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::Util qw(class_to_path);
-File::Spec::Functions->import(qw(catdir));
+use List::Util qw(first);
+use File::Spec::Functions qw(catdir);
 
 our $VERSION = '0.06';
 
@@ -21,13 +22,13 @@ sub _add_paths {
     catdir($class_path, 'Mojolicious', 'templates')
   );
 
-  if (!(List::Util::first { $static eq $_ // '' } @{$app->static->paths})
+  if (!(first { $static eq $_ // '' } @{$app->static->paths})
     && (-d $static))
   {
     push @{$app->static->paths}, $static;
   }
 
-  if (!(List::Util::first { $templates eq $_ // '' } @{$app->renderer->paths})
+  if (!(first { $templates eq $_ // '' } @{$app->renderer->paths})
     && (-d $templates))
   {
     push @{$app->renderer->paths}, $templates;
