@@ -24,6 +24,7 @@ lib/Mojolicious/public/vendor/SemanticUI/definitions/elements/label.min.css
 lib/Mojolicious/public/vendor/SemanticUI/definitions/elements/list.min.css
 lib/Mojolicious/public/vendor/SemanticUI/definitions/elements/loader.min.css
 lib/Mojolicious/public/vendor/SemanticUI/definitions/elements/progress.min.css
+lib/Mojolicious/public/vendor/SemanticUI/definitions/elements/rail.min.css
 lib/Mojolicious/public/vendor/SemanticUI/definitions/elements/reveal.min.css
 lib/Mojolicious/public/vendor/SemanticUI/definitions/elements/segment.min.css
 lib/Mojolicious/public/vendor/SemanticUI/definitions/elements/step.min.css
@@ -47,6 +48,8 @@ lib/Mojolicious/public/vendor/SemanticUI/definitions/modules/nag.min.css
 lib/Mojolicious/public/vendor/SemanticUI/definitions/modules/nag.min.js
 lib/Mojolicious/public/vendor/SemanticUI/definitions/modules/popup.min.css
 lib/Mojolicious/public/vendor/SemanticUI/definitions/modules/popup.min.js
+lib/Mojolicious/public/vendor/SemanticUI/definitions/modules/progress.min.css
+lib/Mojolicious/public/vendor/SemanticUI/definitions/modules/progress.min.js
 lib/Mojolicious/public/vendor/SemanticUI/definitions/modules/rating.min.css
 lib/Mojolicious/public/vendor/SemanticUI/definitions/modules/rating.min.js
 lib/Mojolicious/public/vendor/SemanticUI/definitions/modules/search.min.css
