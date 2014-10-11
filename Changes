@@ -1,5 +1,9 @@
 Revision history for Mojolicious::Plugin::SemanticUI
 
+0.07 2014-10-11
+  - Updated with latest files from http://beta.semantic-ui.com/
+  - Does not require but works with Mojolicious 5.49.  
+
 0.06 2014-09-21
   - Requiring only Perl 5.10.1 in test files.
   - Mentioned Ado.

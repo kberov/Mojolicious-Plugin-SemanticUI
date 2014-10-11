@@ -4,7 +4,7 @@ use Mojo::Util qw(class_to_path);
 use List::Util qw(first);
 use File::Spec::Functions qw(catdir);
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 sub register {
   my ($self, $app) = @_;
@@ -89,7 +89,7 @@ Register plugin in L<Mojolicious> application.
 
 =head1 HELPERS
 
-L<Mojolicious::Plugin::SemanticUI> exports the following
+(TODO) L<Mojolicious::Plugin::SemanticUI> exports the following
 helpers for use in controllers and templates.
 The helpers are provided in the C<SemanticUI> namespace.
 
