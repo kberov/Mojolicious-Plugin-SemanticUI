@@ -58,7 +58,7 @@ subtest globals => sub {
 subtest modules => sub {
   my $path = $base . 'modules/';
   for my $file (
-    qw(accordion chatroom checkbox dimmer dropdown modal nag
+    qw(accordion chatroom checkbox dimmer dropdown modal nag progress
     popup rating search shape sidebar sticky tab transition video)
     )
   {
@@ -83,6 +83,7 @@ subtest themes => sub {
   my $path = $base . 'basic/assets/fonts/';
   for my $ext (qw(eot svg ttf woff)) {
     $t->get_ok($path . 'icons.' . $ext)->status_is(200);
+
     # Let default/assets/fonts/ have the keys.
     #$served_files->{'icons.' . $ext} = 1;
   }
@@ -117,18 +118,21 @@ subtest packaged => sub {
 
 # To not miss newly added files with next upgrade.
 require File::Find;
-my $found_files = 0;
+my $found_files = {};
 subtest 'all served files exist' => sub {
   File::Find::find(
     sub {
-      return unless -f;
-      ok($served_files->{$_}, $_ . ' is served.') if -f;
+      return if -d;
+      ok(-f $_ && $served_files->{$_}, $_ . ' is served.');
+
       #do not count basic theme fonts
-      return if $File::Find::dir=~ m|basic/assets/fonts|;
-      $found_files++;
+      return if $File::Find::dir =~ m|basic/assets/fonts|;
+      $found_files->{$_} = 1;
     },
     $INC[0] . '/Mojolicious/public/vendor/SemanticUI'
   );
 };
-is($found_files, keys %$served_files, 'all found files are served');
+
+is_deeply($found_files, $served_files, 'all found files are served');
+
 done_testing();
