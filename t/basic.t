@@ -14,17 +14,17 @@ my $t = Test::Mojo->new;
 $t->get_ok('/')->status_is(200)->content_is('Hello Mojo!');
 
 # Testing if assets are found and served
-our $base         = '/vendor/SemanticUI/definitions/';
+our $base         = '/vendor/SemanticUI/components/';
 our $served_files = {};
 subtest 'behaviors' => sub {
-  my $path = $base . 'behaviors/';
+  my $path = $base;
   for my $file (qw(api colorize form state visibility visit)) {
     $t->get_ok($path . $file . '.min.js')->status_is(200)->content_like(qr/function/x);
     $served_files->{$file . '.min.js'} = 1;
   }
 };
 subtest collections => sub {
-  my $path = $base . 'collections/';
+  my $path = $base;
   for my $file (qw(breadcrumb form grid menu message table)) {
     $t->get_ok($path . $file . '.min.css')->status_is(200)
       ->content_like(qr/\.ui\.$file/x);
@@ -33,7 +33,7 @@ subtest collections => sub {
 };
 
 subtest elements => sub {
-  my $path = $base . 'elements/';
+  my $path = $base;
   for my $file (
     qw(button divider flag header icon image input label list
     loader progress reveal segment step rail)
@@ -45,7 +45,7 @@ subtest elements => sub {
   }
 };
 subtest globals => sub {
-  my $path = $base . 'globals/';
+  my $path = $base;
   for my $file (qw(reset site)) {
     $t->get_ok($path . $file . '.min.css')->status_is(200)
       ->content_like(qr/semantic-ui/x);
@@ -56,7 +56,7 @@ subtest globals => sub {
   $served_files->{'site.min.js'} = 1;
 };
 subtest modules => sub {
-  my $path = $base . 'modules/';
+  my $path = $base;
   for my $file (
     qw(accordion chatroom checkbox dimmer dropdown modal nag progress
     popup rating search shape sidebar sticky tab transition video)
@@ -70,7 +70,7 @@ subtest modules => sub {
   }
 };
 subtest views => sub {
-  my $path = $base . 'views/';
+  my $path = $base;
   for my $file (qw(card comment feed item statistic)) {
     $t->get_ok($path . $file . '.min.css')->status_is(200)
       ->content_like(qr/(\.ui)?.$file/x);
@@ -79,7 +79,7 @@ subtest views => sub {
 };
 
 subtest themes => sub {
-  $base = '/vendor/SemanticUI/themes/packages/';
+  $base = '/vendor/SemanticUI/themes/';
   my $path = $base . 'basic/assets/fonts/';
   for my $ext (qw(eot svg ttf woff)) {
     $t->get_ok($path . 'icons.' . $ext)->status_is(200);
@@ -95,22 +95,14 @@ subtest themes => sub {
   }
 
   $path = $base . 'default/assets/images/';
-  for my $f (
-    qw(large-inverted large medium-inverted medium
-    mini-inverted mini small-inverted small)
-    )
-  {
-    $t->get_ok($path . 'loader-' . $f . '.gif')->status_is(200);
-    $served_files->{'loader-' . $f . '.gif'} = 1;
-  }
   $t->get_ok($path . 'flags.png')->status_is(200);
   $served_files->{'flags.png'} = 1;
 };
-$base = '/vendor/SemanticUI/definitions/';
+$base = '/vendor/SemanticUI/';
 subtest packaged => sub {
 
-  my $path = $base . '';
-  for my $f (qw(css/semantic.min.css javascript/semantic.min.js)) {
+  my $path = $base;
+  for my $f (qw(semantic.min.css semantic.min.js)) {
     $t->get_ok($path . $f)->status_is(200);
   }
   $served_files->{'semantic.min.css'} = $served_files->{'semantic.min.js'} = 1;

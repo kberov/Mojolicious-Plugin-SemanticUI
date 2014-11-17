@@ -4,7 +4,7 @@ use Mojo::Util qw(class_to_path);
 use List::Util qw(first);
 use File::Spec::Functions qw(catdir);
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 sub register {
   my ($self, $app) = @_;
@@ -57,13 +57,21 @@ Mojolicious::Plugin::SemanticUI - Semantic UI for your application
 
   #in your layout (or template)
   <head>
-  <!-- ... -->
+  <!-- Use only some components -->
   %= stylesheet begin
-    @import url('/vendor/SemanticUI/definitions/elements/button.min.css');
-    @import url('/vendor/SemanticUI/definitions/elements/divider.min.css');
+    @import url('/vendor/SemanticUI/components/modal.min.css');
+    /* other CSS files here */
   %=end
-  %= javascript '/vendor/SemanticUI/definitions/javascript/semantic.min.js'
-  <!-- ... -->
+  %= javascript '/vendor/SemanticUI/components/modal.min.js'
+  <!-- other JavaScript files here -->
+
+  <!-- or all of it -->
+  %= stylesheet begin
+    @import url('/vendor/SemanticUI/components/reset.min.css');
+    @import url('/vendor/SemanticUI/semantic.min.css');
+  %=end
+
+  %= javascript '/vendor/SemanticUI/semantic.min.js'
   </head>
 
 =head1 DESCRIPTION
@@ -72,9 +80,9 @@ L<Mojolicious::Plugin::SemanticUI>
 includes the minifed build of the Semantic UI CSS and Javascript library.
 Note that the beta 1.0 version is included - L<http://beta.semantic-ui.com/>.
 It also provides helpers (TODO) for using Semantic UI modules
-in your templates.
-This way you do not need to download Semantic UI separately.
-This is ALPHA release - B<not ready for production>.
+in your templates. This way you do not need to download Semantic UI separately.
+
+This is ALPHA release - B<not ready for production>, even though L<Ado> depends on it.
 
 =head1 METHODS
 
@@ -107,7 +115,7 @@ TODO
 
 =head1 SEE ALSO
 
-L<Mojolicious>, L<Mojolicious::Guides>, L<Ado>,
+L<Ado>, L<Mojolicious>, L<Mojolicious::Guides>,
 L<http://beta.semantic-ui.com/>, L<http://mojolicio.us>.
 
 =head1 AUTHOR
