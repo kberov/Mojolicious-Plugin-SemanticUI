@@ -4,7 +4,7 @@ use Mojo::Util qw(class_to_path);
 use List::Util qw(first);
 use File::Spec::Functions qw(catdir);
 
-our $VERSION = '0.08';
+our $VERSION = '0.01';
 
 sub register {
   my ($self, $app) = @_;
@@ -77,12 +77,7 @@ Mojolicious::Plugin::SemanticUI - Semantic UI for your application
 =head1 DESCRIPTION
 
 L<Mojolicious::Plugin::SemanticUI> 
-includes the minifed build of the Semantic UI CSS and Javascript library.
-Note that the beta 1.0 version is included - L<http://beta.semantic-ui.com/>.
-It also provides helpers (TODO) for using Semantic UI modules
-in your templates. This way you do not need to download Semantic UI separately.
-
-This is ALPHA release - B<not ready for production>, even though L<Ado> depends on it.
+includes the minifed build of the Semantic UI CSS and Javascript library version 1.0.0.
 
 =head1 METHODS
 
@@ -95,28 +90,11 @@ L<Mojolicious::Plugin> and implements the following new ones.
 
 Register plugin in L<Mojolicious> application.
 
-=head1 HELPERS
-
-(TODO) L<Mojolicious::Plugin::SemanticUI> exports the following
-helpers for use in controllers and templates.
-The helpers are provided in the C<SemanticUI> namespace.
-
-  % my $sui = $c->SemanticUI;
-  %= $sui->segment begin
-    Ала-бала-ница, турска паница,
-    Хей гиди Ванчо,
-    наш капитанчо...
-  %=end
-
-=head2 segment
-
-TODO
-...
 
 =head1 SEE ALSO
 
 L<Ado>, L<Mojolicious>, L<Mojolicious::Guides>,
-L<http://beta.semantic-ui.com/>, L<http://mojolicio.us>.
+L<http://semantic-ui.com/>, L<http://mojolicio.us>.
 
 =head1 AUTHOR
 
