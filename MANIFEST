@@ -2,6 +2,7 @@ Changes
 lib/Mojolicious/Plugin/SemanticUI.pm
 lib/Mojolicious/public/vendor/SemanticUI/components/accordion.min.css
 lib/Mojolicious/public/vendor/SemanticUI/components/accordion.min.js
+lib/Mojolicious/public/vendor/SemanticUI/components/ad.min.css
 lib/Mojolicious/public/vendor/SemanticUI/components/api.min.js
 lib/Mojolicious/public/vendor/SemanticUI/components/breadcrumb.min.css
 lib/Mojolicious/public/vendor/SemanticUI/components/button.min.css

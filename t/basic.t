@@ -71,7 +71,7 @@ subtest modules => sub {
 };
 subtest views => sub {
   my $path = $base;
-  for my $file (qw(card comment feed item statistic)) {
+  for my $file (qw(ad card comment feed item statistic)) {
     $t->get_ok($path . $file . '.min.css')->status_is(200)
       ->content_like(qr/(\.ui)?.$file/x);
     $served_files->{$file . '.min.css'} = 1;
