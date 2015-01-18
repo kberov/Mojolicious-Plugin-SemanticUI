@@ -18,7 +18,7 @@ our $base         = '/vendor/SemanticUI/components/';
 our $served_files = {};
 subtest 'behaviors' => sub {
   my $path = $base;
-  for my $file (qw(api colorize form state visibility visit)) {
+  for my $file (qw(api form state visibility)) {
     $t->get_ok($path . $file . '.min.js')->status_is(200)->content_like(qr/function/x);
     $served_files->{$file . '.min.js'} = 1;
   }
@@ -58,7 +58,7 @@ subtest globals => sub {
 subtest modules => sub {
   my $path = $base;
   for my $file (
-    qw(accordion chatroom checkbox dimmer dropdown modal nag progress
+    qw(accordion checkbox dimmer dropdown modal nag progress
     popup rating search shape sidebar sticky tab transition video)
     )
   {

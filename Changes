@@ -1,5 +1,11 @@
 Revision history for Mojolicious::Plugin::SemanticUI
 
+0.11 2015-01-18
+  - Updated to Semantic UI 1.7.3 with latest minified files, downloaded from
+    https://github.com/Semantic-Org/Semantic-UI/archive/1.7.3.zip
+  - Semantic Release Notes:
+    https://github.com/Semantic-Org/Semantic-UI/blob/1.7.3/RELEASE-NOTES.md 
+
 0.10 2014-12-07
   - Updated to Semantic UI 1.1.2 with latest minified files from the dist folder
     in the zip file downloaded from https://github.com/Semantic-Org/Semantic-UI/tree/1.1.2.
