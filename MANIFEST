@@ -7,11 +7,8 @@ lib/Mojolicious/public/vendor/SemanticUI/components/api.min.js
 lib/Mojolicious/public/vendor/SemanticUI/components/breadcrumb.min.css
 lib/Mojolicious/public/vendor/SemanticUI/components/button.min.css
 lib/Mojolicious/public/vendor/SemanticUI/components/card.min.css
-lib/Mojolicious/public/vendor/SemanticUI/components/chatroom.min.css
-lib/Mojolicious/public/vendor/SemanticUI/components/chatroom.min.js
 lib/Mojolicious/public/vendor/SemanticUI/components/checkbox.min.css
 lib/Mojolicious/public/vendor/SemanticUI/components/checkbox.min.js
-lib/Mojolicious/public/vendor/SemanticUI/components/colorize.min.js
 lib/Mojolicious/public/vendor/SemanticUI/components/comment.min.css
 lib/Mojolicious/public/vendor/SemanticUI/components/dimmer.min.css
 lib/Mojolicious/public/vendor/SemanticUI/components/dimmer.min.js
@@ -68,7 +65,6 @@ lib/Mojolicious/public/vendor/SemanticUI/components/transition.min.js
 lib/Mojolicious/public/vendor/SemanticUI/components/video.min.css
 lib/Mojolicious/public/vendor/SemanticUI/components/video.min.js
 lib/Mojolicious/public/vendor/SemanticUI/components/visibility.min.js
-lib/Mojolicious/public/vendor/SemanticUI/components/visit.min.js
 lib/Mojolicious/public/vendor/SemanticUI/semantic.min.css
 lib/Mojolicious/public/vendor/SemanticUI/semantic.min.js
 lib/Mojolicious/public/vendor/SemanticUI/themes/basic/assets/fonts/icons.eot
