@@ -14,70 +14,8 @@ my $t = Test::Mojo->new;
 $t->get_ok('/')->status_is(200)->content_is('Hello Mojo!');
 
 # Testing if assets are found and served
-our $base         = '/vendor/SemanticUI/components/';
+our $base         = '';
 our $served_files = {};
-subtest 'behaviors' => sub {
-  my $path = $base;
-  for my $file (qw(api form state visibility)) {
-    $t->get_ok($path . $file . '.min.js')->status_is(200)->content_like(qr/function/x);
-    $served_files->{$file . '.min.js'} = 1;
-  }
-};
-subtest collections => sub {
-  my $path = $base;
-  for my $file (qw(breadcrumb form grid menu message table)) {
-    $t->get_ok($path . $file . '.min.css')->status_is(200)
-      ->content_like(qr/\.ui\.$file/x);
-    $served_files->{$file . '.min.css'} = 1;
-  }
-};
-
-subtest elements => sub {
-  my $path = $base;
-  for my $file (
-    qw(button divider flag header icon image input label list
-    loader progress reveal segment step rail)
-    )
-  {
-    $t->get_ok($path . $file . '.min.css')->status_is(200)
-      ->content_like(qr/(\.ui\.)?$file/x);
-    $served_files->{$file . '.min.css'} = 1;
-  }
-};
-subtest globals => sub {
-  my $path = $base;
-  for my $file (qw(reset site)) {
-    $t->get_ok($path . $file . '.min.css')->status_is(200)
-      ->content_like(qr/semantic-ui/x);
-    $served_files->{$file . '.min.css'} = 1;
-
-  }
-  $t->get_ok($path . 'site.min.js')->status_is(200)->content_like(qr/function/x);
-  $served_files->{'site.min.js'} = 1;
-};
-subtest modules => sub {
-  my $path = $base;
-  for my $file (
-    qw(accordion checkbox dimmer dropdown modal nag progress
-    popup rating search shape sidebar sticky tab transition video)
-    )
-  {
-    $t->get_ok($path . $file . '.min.css')->status_is(200)
-      ->content_like(qr/(\.ui)?.$file/x);
-    $served_files->{$file . '.min.css'} = 1;
-    $t->get_ok($path . $file . '.min.js')->status_is(200)->content_like(qr/function/x);
-    $served_files->{$file . '.min.js'} = 1;
-  }
-};
-subtest views => sub {
-  my $path = $base;
-  for my $file (qw(ad card comment feed item statistic)) {
-    $t->get_ok($path . $file . '.min.css')->status_is(200)
-      ->content_like(qr/(\.ui)?.$file/x);
-    $served_files->{$file . '.min.css'} = 1;
-  }
-};
-
 subtest themes => sub {
   $base = '/vendor/SemanticUI/themes/';
   my $path = $base . 'basic/assets/fonts/';

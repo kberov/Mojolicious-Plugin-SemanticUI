@@ -1,5 +1,14 @@
 Revision history for Mojolicious::Plugin::SemanticUI
 
+0.12 2015-02-11
+  - Updated to Semantic UI 1.8.1 with latest minified files, downloaded from
+    https://github.com/Semantic-Org/Semantic-UI/archive/1.8.1.zip
+  - From this release onward we will distribute only
+    semantic.min.css, semantic.min.js and the themes folder.
+    This makes the file management much easier and saves a lot of
+    useless tests.
+
+
 0.11 2015-01-18
   - Updated to Semantic UI 1.7.3 with latest minified files, downloaded from
     https://github.com/Semantic-Org/Semantic-UI/archive/1.7.3.zip

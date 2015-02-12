@@ -4,7 +4,7 @@ use Mojo::Util qw(class_to_path);
 use List::Util qw(first);
 use File::Spec::Functions qw(catdir);
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 sub register {
   my ($self, $app) = @_;
@@ -57,27 +57,18 @@ Mojolicious::Plugin::SemanticUI - Semantic UI for your application
 
   #in your layout (or template)
   <head>
-  <!-- Use only some components -->
   %= stylesheet begin
-    @import url('/vendor/SemanticUI/components/modal.min.css');
-    /* other CSS files here */
-  %=end
-  %= javascript '/vendor/SemanticUI/components/modal.min.js'
-  <!-- other JavaScript files here -->
-
-  <!-- or all of it -->
-  %= stylesheet begin
-    @import url('/vendor/SemanticUI/components/reset.min.css');
     @import url('/vendor/SemanticUI/semantic.min.css');
   %=end
-
+  %= javascript '/mojo/jquery/jquery.js'
   %= javascript '/vendor/SemanticUI/semantic.min.js'
   </head>
 
 =head1 DESCRIPTION
 
-L<Mojolicious::Plugin::SemanticUI> 
-includes the minifed build of the Semantic UI CSS and Javascript library version 1.0.0.
+L<Mojolicious::Plugin::SemanticUI>
+includes the minifed build of the Semantic UI CSS and JavaScript library 
+version 1.X.X. See the C<Changes> file for the specific current version.
 
 =head1 METHODS
 
