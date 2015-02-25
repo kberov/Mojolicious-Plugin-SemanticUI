@@ -60,3 +60,7 @@
 
 Avoid build distros
 Mojolicious-Plugin-SemanticUI-\d+\.\d+\.tar\.gz
+
+Avoid not minified files, used only while developping.
+lib/Mojolicious/public/vendor/SemanticUI/semantic.css
+lib/Mojolicious/public/vendor/SemanticUI/semantic.js
