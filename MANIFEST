@@ -11,6 +11,7 @@ lib/Mojolicious/public/vendor/SemanticUI/themes/default/assets/fonts/icons.otf
 lib/Mojolicious/public/vendor/SemanticUI/themes/default/assets/fonts/icons.svg
 lib/Mojolicious/public/vendor/SemanticUI/themes/default/assets/fonts/icons.ttf
 lib/Mojolicious/public/vendor/SemanticUI/themes/default/assets/fonts/icons.woff
+lib/Mojolicious/public/vendor/SemanticUI/themes/default/assets/fonts/icons.woff2
 lib/Mojolicious/public/vendor/SemanticUI/themes/default/assets/images/flags.png
 LICENSE
 Makefile.PL

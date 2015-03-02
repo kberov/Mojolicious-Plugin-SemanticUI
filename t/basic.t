@@ -27,7 +27,7 @@ subtest themes => sub {
   }
 
   $path = $base . 'default/assets/fonts/';
-  for my $ext (qw(eot otf svg ttf woff)) {
+  for my $ext (qw(eot otf svg ttf woff woff2)) {
     $t->get_ok($path . 'icons.' . $ext)->status_is(200);
     $served_files->{'icons.' . $ext} = 1;
   }
@@ -53,10 +53,14 @@ subtest 'all served files exist' => sub {
   File::Find::find(
     sub {
       return if -d;
+      # do not count not minified temporarily used files
+      return if $_ =~ m"
+        semantic.js | semantic.css
+        "x;
       ok(-f $_ && $served_files->{$_}, $_ . ' is served.');
 
-      #do not count basic theme fonts
-      return if $File::Find::dir =~ m|basic/assets/fonts|;
+      # do not count basic theme fonts
+      return if $File::Find::dir =~ m"basic/assets/fonts";
       $found_files->{$_} = 1;
     },
     $INC[0] . '/Mojolicious/public/vendor/SemanticUI'
