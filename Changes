@@ -1,5 +1,11 @@
 Revision history for Mojolicious::Plugin::SemanticUI
 
+0.17 2015-05-09
+  - Updated with latest minified files from Semantic UI 1.12.2
+    https://github.com/Semantic-Org/Semantic-UI/archive/1.12.2.zip
+  - Components (*.min.*) are back to allow using only what is needed
+    and not everything.  
+
 0.16 2015-04-19
   - Updated with latest minified files from Semantic UI 1.12.0
     https://github.com/Semantic-Org/Semantic-UI/archive/1.12.0.zip

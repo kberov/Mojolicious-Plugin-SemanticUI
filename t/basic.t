@@ -46,6 +46,18 @@ subtest packaged => sub {
   $served_files->{'semantic.min.css'} = $served_files->{'semantic.min.js'} = 1;
 };
 
+subtest components => sub {
+  my $path = $base . 'components/';
+  File::Find::find(
+    sub {
+      return if -d;
+      $t->get_ok($path . $_)->status_is(200);
+      $served_files->{$_} = 1;
+    },
+    $INC[0] . '/Mojolicious/public/vendor/SemanticUI/components'
+  );
+};
+
 # To not miss newly added files with next upgrade.
 require File::Find;
 my $found_files = {};
@@ -53,6 +65,7 @@ subtest 'all served files exist' => sub {
   File::Find::find(
     sub {
       return if -d;
+
       # do not count not minified temporarily used files
       return if $_ =~ m"
         semantic.js | semantic.css
