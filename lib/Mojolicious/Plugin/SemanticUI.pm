@@ -4,7 +4,7 @@ use Mojo::Util qw(class_to_path);
 use List::Util qw(first);
 use File::Spec::Functions qw(catdir);
 
-our $VERSION = '0.14';
+our $VERSION = '0.16';
 
 sub register {
   my ($self, $app) = @_;
